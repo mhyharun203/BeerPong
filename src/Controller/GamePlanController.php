@@ -3,26 +3,35 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Controller\ThreeTeams\MatchPlan3PlayersController;
 use App\Core\TwigView;
 
 class GamePlanController implements ControllerInterface
 {
 
-    public function __construct(private TwigView $twigView)
+    public function __construct()
     {
     }
 
     public function render()
     {
         $amountTeams = $_GET['Teams'];
-        $this->twigView->init();
-        $this->twigView->render('GamePlanView.twig', ['Baum' => $amountTeams]);
+        $this->matchplan($amountTeams);
+
     }
 
     public function matchplan($teams)
     {
-        $amountTeams = $_GET['Teams'];
-
+        switch ($teams) {
+            case 3:
+                $amountTeams = new MatchPlan3PlayersController(new TwigView());
+                $amountTeams->render();
+                break;
+            case 4;
+                $amountTeams = new MatchPlan4PlayersController(new TwigView());
+                $amountTeams->render();
+        }
+        return ($amountTeams);
     }
 
 }

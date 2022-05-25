@@ -1,0 +1,39 @@
+Erste Runde <br>
+Punkte Pro Sieg: 3 <br>
+
+<form action="index.php?page=ThreeTeamsFinalController" method="post">
+<table border="1">
+    <tr>
+        <th>Spiel</th>
+        <th> Team: {{ teams1 }}</th>
+        <th> Team: {{ teams2 }}</th>
+        <th>Team:  {{ teams3 }}</th>
+    </tr>
+    <tr>
+        <td>Spiel 1</td>
+        <td><input type="checkbox" name="checkbox1" /></td>
+        <td><input type="checkbox" name="checkbox2" /></td>
+        <td>/</td>
+    </tr>
+    <tr>
+        <td>Spiel 2</td>
+        <td><input type="checkbox" name="checkbox3" /></td>
+        <td>/</td>
+        <td><input type="checkbox" name="checkbox4" /></td>
+    </tr>
+    <tr>
+        <td>Spiel 3</td>
+        <td>/</td>
+        <td><input type="checkbox" name="checkbox5" /></td>
+        <td><input type="checkbox" name="checkbox6" /></td>
+    </tr>
+    <tr>
+        <td> Spiel 4 </td>
+        <td><input type="checkbox" name="checkbox7" /></td>
+        <td>/</td>
+        <td><input type="checkbox" name="checkbox8" /></td>
+    </tr>
+</table>
+    <br>
+    <input type="submit" name="submit" value="Nächste Runde">
+</form>

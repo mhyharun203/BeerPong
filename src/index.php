@@ -12,7 +12,7 @@ $controllerProvider = new App\Core\ControllerProvider;
 
 
 foreach ($controllerProvider->getList() as $class) {
-    if ('App\Controller\\' . $search === $class) {
+    if ('App\Controller\\' . $search === $class || 'App\Controller\ThreeTeams\\' . $search === $class) {
         $view = new TwigView();
         $page = new $class($view);
         $page->render();

@@ -6,7 +6,8 @@ use Twig\Environment;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-
+$pdoConnection = new \App\Core\PdoConnect();
+$connection = $pdoConnection->connectToDatabase();
 $search = $_GET['page'] ?? 'HomeController';
 $controllerProvider = new App\Core\ControllerProvider;
 
@@ -19,4 +20,4 @@ foreach ($controllerProvider->getList() as $class) {
 
     }
 }
-
+$pdoConnection->closeConnection();

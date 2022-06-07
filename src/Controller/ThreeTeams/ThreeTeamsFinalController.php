@@ -19,7 +19,8 @@ class ThreeTeamsFinalController implements ControllerInterface
     public function calculate()
     {
 
-        $playsInArray = [$_POST['checkbox1']];
+        $playsInArray = [$_POST['checkbox2'], $_POST['checkbox1'], $_POST['checkbox3']];
+        var_dump($playsInArray);
         return $playsInArray;
     }
 
